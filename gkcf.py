@@ -34,8 +34,13 @@ def write_file(items):
             
 #定义main方法，变量user表示开始的准考证号
 def main():
+    t='姓名\t准考证号\t语文\t数学\t外语\t综合\t量化成绩\t总分\t加分\t加分类型\t全省排名'
     u = "http://www.ynzs.cn/2018gkcf/check.php?action=query"
     h = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Safari/537.36','Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8','Accept': 'application/json, text/javascript, */*; q=0.01','X-Requested-With': 'XMLHttpRequest','DNT': '1','Referer': 'http://www.ynzs.cn/2018gkcf/web.html','Accept-Encoding': 'gzip, deflate','Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8','Host': 'www.ynzs.cn'}
+    with open('result.txt','a') as f:
+        f.write(t)
+        f.close()
+    print(t)
     user = 262751116
     while (user<=262751202):
         html=get_url(u,user,777777,h)
@@ -45,5 +50,3 @@ def main():
 
 if __name__=='__main__':
     main()
-
-#程序运行后会在当前目录生成一个result.txt文件，直接将文件内容复制到Excel中粘贴即可。
