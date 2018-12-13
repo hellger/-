@@ -32,7 +32,7 @@ def write_file(items):
                 f.write(j+'\t')
             f.close()
             
-#定义main方法，变量user表示开始的准考证号
+#定义main方法
 def main():
     t='姓名\t准考证号\t语文\t数学\t外语\t综合\t量化成绩\t总分\t加分\t加分类型\t全省排名'
     u = "http://www.ynzs.cn/2018gkcf/check.php?action=query"
@@ -41,8 +41,10 @@ def main():
         f.write(t)
         f.close()
     print(t)
-    user = 262751116
-    while (user<=262751202):
+    #下面*部分填写9位数第一个准考证号
+    user = *********
+    #下面#部分填写9位数最后一个准考证号
+    while (user<=#########):
         html=get_url(u,user,777777,h)
         w=parse_page(html)
         write_file(w)
