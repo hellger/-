@@ -84,5 +84,6 @@ def main():
         write_xlsx(w,row,'2018高考成绩.xlsx')
         row =row+1
     print('查询完成，结果保存在当前目录下。\n注意：表格中如果有空行，说明这一行对应的账号或密码很可能不正确，请手动核实。')
+    a = input("按任意键退出")
 if __name__=='__main__':
     main()
